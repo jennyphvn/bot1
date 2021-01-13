@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title>Amazon Lex for JavaScript - Sample Application (HP Live Chat)</title>
+	<title>HP Chatbot (Team 17)</title>
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.41.0.min.js"></script>
 	<style language="text/css">
+		
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+		
+		* {
+			font-family: Roboto, Arial, Helvetica, sans-serif;
+			color: #0e0e0e;
+			text-align: center;
+			box-sizing: border-box;
+		}
+		
+		h1 {
+			padding: 0;
+			margin: auto;
+			font-size: 2em;
+			font-weight: 700;
+			line-height: 100%;
+		}
+		
+		#desc {
+			margin: 0;
+			padding: 3px;
+			font-size: smaller;
+		}
+
+		#hp-logo {
+			height: 64px;
+			float: left;
+		}
+		
+		.title-logo {
+			display: inline-block;
+			vertical-align: top;
+		}
+
 		input#wisdom {
 			padding: 4px;
 			font-size: 1em;
 			width: 400px
+		}
+		
+		header {
+			max-width: 1000px;
+			max-height: 100px;
+			margin: auto auto;
+			padding-bottom: 20px;
+		}
+
+		body {
+			background-image: linear-gradient(0deg, #ececec,#ececec)
+		}
+
+		#conversation {
+			width: 500px;
+			height: 750px;
+			box-shadow: 2px 2px 10px #8d8d8d;
+			border: 1px solid rgb(197, 197, 197);
+			background-color: rgb(255, 255, 255);
+			padding: 4px;
+			overflow: auto;
+			margin: auto auto;
 		}
 
 		input::placeholder {
@@ -23,7 +78,7 @@
 			min-width: 50%;
 			max-width: 85%;
 			float: left;
-			background-color: #7d7;
+			background-color: #0096d67c;
 		}
 
 		p.lexResponse {
@@ -34,7 +89,7 @@
 			min-width: 50%;
 			max-width: 85%;
 			float: right;
-			background-color: #bbf;
+			background-color: rgb(211, 211, 211);
 			font-style: italic;
 		}
 
@@ -50,16 +105,21 @@
 		}
 	</style>
 </head>
-
-<body>
-	<h1 style="text-align:  left">HP Customer Service Live Chat</h1>
-	<p style="width: 400px">
-		We earn customer respect and loyalty by consistently providing the highest quality and value. For more information please visit our website 
-		<a href="https://www8.hp.com/us/en/hp-information.html" title="HP.com(product)" target="_new">HP</a>.
+<header>
+	<div class="title-logo">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HP Logo" id="hp-logo">
+		<h1>Customer Service Chatbot</h1>
+	</div>
+	<p id="desc">
+		We earn customer respect and loyalty by consistently providing the highest quality and value. For more information please visit  
+		<a href="https://www8.hp.com/us/en/hp-information.html" target="_new">our website</a>.
 	</p>
-	<div id="conversation" style="width: 400px; height: 400px; border: 1px solid #ccc; background-color: #eee; padding: 4px; overflow: scroll"></div>
+	
+</header>
+<body>
+	<div id="conversation"></div>
 	<form id="chatform" style="margin-top: 10px" onsubmit="return pushChat();">
-		<input type="text" id="wisdom" size="80" value="" placeholder="How can we help?">
+		<input type="text" id="wisdom" size="80" value="" placeholder="Hello, how may we assist you?">
 	</form>
 	<script type="text/javascript">
 		// set the focus to the input box
@@ -159,5 +219,8 @@
 		}
 	</script>
 </body>
-
+<footer>
+	<p style="font-size: x-small; margin-top: 30px;">This chatbot was created by Team 17 for the HP and AWS University Bot-A-Thon from January 12-13, 2021. While undoubtably really cool,
+	the content of this website is merely a learning tool by its creators and not an officially-licensed product of either company.</p>
+</footer>
 </html>
