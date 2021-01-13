@@ -69,7 +69,7 @@
 		AWS.config.region = 'us-east-1'; // Region
 		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
 		// Provide your Pool Id here
-			IdentityPoolId: 'us-east-1:XXXXX',
+			IdentityPoolId: 'us-east-1:466751c9-ab81-4608-a02b-06c48d5932c5',
 		});
 
 		var lexruntime = new AWS.LexRuntime();
@@ -90,7 +90,7 @@
 				// send it to the Lex runtime
 				var params = {
 					botAlias: '$LATEST',
-					botName: 'BookTrip',
+					botName: 'TeamSeventeen',
 					inputText: wisdom,
 					userId: lexUserId,
 					sessionAttributes: sessionAttributes
