@@ -145,6 +145,7 @@
 				responsePara.appendChild(document.createTextNode(lexResponse.message));
 				responsePara.appendChild(document.createElement('br'));
 			}
+			/** the following shows the state of the response, which is not necessary for the conversation
 			if (lexResponse.dialogState === 'ReadyForFulfillment') {
 				responsePara.appendChild(document.createTextNode(
 					'Ready for fulfillment'));
@@ -152,7 +153,7 @@
 			} else {
 				responsePara.appendChild(document.createTextNode(
 					'(' + lexResponse.dialogState + ')'));
-			}
+			} **/
 			conversationDiv.appendChild(responsePara);
 			conversationDiv.scrollTop = conversationDiv.scrollHeight;
 		}
